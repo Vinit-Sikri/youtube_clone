@@ -5,12 +5,9 @@ const createSocketServer = (app) => {
   const server = http.createServer(app);
   const io = new Server(server, {
     cors: {
-      origin: ["https://6690e70b521c87f6288b716f--guileless-otter-82d908.netlify.app",
-         "http://localhost:3000",
-        "https://669227249c1981e8d86b3c25--guileless-otter-82d908.netlify.app",
-      "https://yoouuttuubbee.netlify.app"],
-      methods: ["GET", "POST"]
-    }
+      origin: "*",
+      methods: ["GET", "POST"],
+    },
   });
 
   io.on("connection", (socket) => {
